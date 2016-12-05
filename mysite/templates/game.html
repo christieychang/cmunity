@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" media="all" type="text/css" href="static/styles.css"/>
+    <!-- <script type="text/javascript" src="js/login.js" ></script> -->
+
+    <title>CMUnity</title>
+</head>
+
+<div id="top-row">
+    <header>
+        <h1 class=".clickyo">CMUnity</h1>
+        <h3>Bringing campus together, one high five at a time</h3>
+    </header>
+    <form method="POST" action="/cmuscores">
+    <nav>
+        {% csrf_token %}
+        <a href="logout.html">{{user}}</a> 
+        <a href="/cmuscores">Score: {{score}}</a>
+    </nav>
+    </form>
+</div>
+
+<body>
+    
+
+<div id="container">
+    <br>
+    <div id="map">
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: 40.44355, lng: -79.94454},
+                    zoom: 18
+                });
+                
+                // navigator.geolocation.watchPosition(showPosition)
+                // var latitude = position.coords.latitude
+                // var longitude = position.coords.longitude
+                
+                var marker = new google.maps.Marker({
+                    position: {lat: 40.44358, lng: -79.94445
+                    },
+                    map: map,
+                    title: 'me'
+                });
+
+                var image = 'https://mt.google.com/vt/icon?psize=20&font=fonts/Roboto-Regular.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-blue.png&ax=44&ay=48&scale=1&text=%E2%80%A2';
+
+                var marker = new google.maps.Marker({
+                    animation: google.maps.Animation.DROP,
+                    position: {lat: 40.44354, lng: -79.94439
+                    },
+                    map: map,
+                    icon: image,
+                    title: 'friend'
+                });
+            }
+
+            // function makeMarker() {
+            //     navigator.geolocation.watchPosition(showPosition);
+                
+                
+            // }
+            
+        </script>
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe9TQVwum4_DlMpH-llwoRUGHyut0rHdk&callback=initMap"
+        >
+        </script>
+    </div>
+
+    <div id="five">
+        <form method="POST" action="/gpsstart">
+        <a href="/gpsstart"><img src="static/images/old.gif" width="200" height="150"></a>
+    </div>
+</div>
+</body>
+
+
+
+<footer>
+    <hr/>
+    &copy; 2016 Hack 112
+</footer>
+
+
+
+
+
+
+
+
+
+
+</html>

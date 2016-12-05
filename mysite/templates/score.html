@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" media="all" type="text/css" href="static/styles.css"/>
+    <title>CMUnity Login</title>
+</head>
+
+<div id="top-row">
+    <header>
+        <h1 class=".clickyo">  CMUnity</h1>
+        <h3>  Bringing campus together, one high five at a time</h3>
+    </header>
+
+    <nav>
+        <a href="logout.html">{{user}}</a>
+        <a href="score.html">Score: {{score}}</a>
+    </nav>
+</div>
+
+<body>
+    <br>
+    <div id="table">
+    <table style="width:60%">
+        <th>High Scores!</th>
+        {% for otheruser in scores %}
+        <tr>
+            <td>{{otheruser.name}}</td>
+            <td>{{otheruser.score}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+        <br><br><br>
+    </div>
+</body>
+
+<footer>
+    <hr/>
+    &copy; 2016 Hack 112
+</footer>
+
+
+
+</html>

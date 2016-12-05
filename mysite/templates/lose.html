@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" media="all" type="text/css" href="static/styles.css"/>
+
+    <title>CMUnity</title>
+</head>
+
+<div id="top-row">
+        <header>
+            <h1 class=".clickyo">CMUnity</h1>
+            <h3>Bringing campus together, one high five at a time</h3>
+        </header>
+
+    <nav>
+        <form method="POST" action="/cmuscores">
+        <nav>
+            {% csrf_token %}
+            <a href="logout.html">{{user}}</a>
+            <a href="/cmuscores">Score: {{score}}</a>
+        </nav>
+        </form>
+    </div>
+
+<body>
+    <div id="container">
+        
+
+    <div id="map">
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: 40.44355, lng: -79.94454},
+                    zoom: 18
+                });
+                
+                // navigator.geolocation.watchPosition(showPosition)
+                // var latitude = position.coords.latitude
+                // var longitude = position.coords.longitude
+                
+                var marker = new google.maps.Marker({
+                    position: {lat: 40.44358, lng: -79.94445
+                    },
+                    map: map,
+                    title: 'me'
+                });
+
+                // var pinImage.innerHTML = "img src = images/blue.png" 
+
+                var image = 'https://mt.google.com/vt/icon?psize=20&font=fonts/Roboto-Regular.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-blue.png&ax=44&ay=48&scale=1&text=%E2%80%A2';
+
+                var marker = new google.maps.Marker({
+                    // icon: pinImage
+                    animation: google.maps.Animation.DROP,
+                    position: {lat: 40.44354, lng: -79.94439
+                    },
+                    map: map,
+                    icon: image,
+                    title: 'friend'
+                });
+            }
+
+            // function makeMarker() {
+            //     navigator.geolocation.watchPosition(showPosition);
+                
+                
+            // }
+            
+        </script>
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe9TQVwum4_DlMpH-llwoRUGHyut0rHdk&callback=initMap"
+        >
+        </script>
+    </div>
+
+    <div id="directions"><br>
+        <div id="wrong">
+            <h2>Are you sure you have the right code?</h2>
+            <br>
+            <a><img src="static/images/fives/Fail.gif" width="420" height="220"></a>
+            <br><br><br>
+            <br><br><br><br><br>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+
+        <h2>Your code is highlighted below in gray.<br>Click on the gif that matches your new friend's code once you've high fived!</h2>
+        <div id="aa">
+            <a class="theirs" href="/gifchoice"><img src="static/images/fives/Colbert.gif" width="200" height="120"></a>
+            <a class="wrong" href="/gifchoicewrong"><img src="static/images/fives/OneDirection.gif" width="200" height="120"></a>
+            <a class="yours" href="/gifchoice"><img src="static/images/fives/SNL.gif" width="200" height="120"></a>
+        </div>
+        <br>
+        <div id="bb">
+            <a class="wrong" href="/gifchoice"><img src="static/images/fives/ATime2.gif" width="200" height="120"></a>
+            <a class="wrong" href="/gifchoice"><img src="static/images/fives/HIMYM.gif" width="200" height="120"></a>
+            <a class="wrong" href="/gifchoice"><img src="static/images/fives/NewGroove.gif" width="200" height="120"></a>
+        </div="bb">
+    </div>
+    </div>
+
+</body>
+
+
+
+<footer>
+    <hr/>
+    &copy; 2016 Hack 112
+</footer>
+
+
+
+
+
+
+
+
+
+
+</html>
